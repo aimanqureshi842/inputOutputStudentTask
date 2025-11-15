@@ -1,0 +1,35 @@
+<div class="card" *ngIf="stdArr.length>0 ;else noDataAdded">
+    <div class="card-body">
+        <h1 class="text-center font-weight-bold">Student Form</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr no</th>
+                    <th>Full Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Edit</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let std of stdArr; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{std.fullName|titlecase}}</td>
+                    <td>{{std.age}}</td>
+                    <td>{{std.gender}}</td>
+                    <td>{{std.department|titlecase}}</td>
+                    <td><button mat-raised-button color="primary" (click)="onStdEdit(std)">Edit</button></td>
+                    <td><button mat-raised-button color="warn" (click)="onStdRemove(std)" >remove</button></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-template #noDataAdded>
+    <p class="alert alert-info">
+        No data added to table !
+    </p>
+</ng-template>

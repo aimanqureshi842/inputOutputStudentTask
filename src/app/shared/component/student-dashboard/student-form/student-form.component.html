@@ -1,0 +1,44 @@
+
+<div class="card">
+    <div class="card-body">
+        <h1 class="text-center font-weight-bold">Student Form</h1>
+        <form [formGroup]="stdForm" (ngSubmit)="onStdSub()">
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput formControlName="fullName">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Age</mat-label>
+                <input type="number" matInput max="120" min="1" step="1" formControlName="age">
+            </mat-form-field>
+            <mat-radio-group formControlName="gender">
+                <p><mat-label>Gender : </mat-label></p>
+                <mat-radio-button value="Male" class="mr-2">
+                    Male
+                </mat-radio-button>
+                <mat-radio-button value="Female" class="mr-2">
+                    Female
+                </mat-radio-button>
+                <mat-radio-button value="Other">
+                    Other
+                </mat-radio-button>
+            </mat-radio-group>
+            <mat-form-field appearance="fill">
+                <mat-label>Department</mat-label>
+                <mat-select formControlName="department">
+                    <mat-option value="Engineering">Engineering</mat-option>
+                    <mat-option value="Human Resources">Human Resources</mat-option>
+                    <mat-option value="Finance">Finance</mat-option>
+                    <mat-option value="Marketing">Marketing</mat-option>
+                    <mat-option value="Sales">Sales</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="btn-block" type="submit" *ngIf="!isInEditMode ;else notInEdit">Add Student</button>
+            <ng-template #notInEdit>
+                <button mat-raised-button color="primary" class="btn-block" type="button" (click)="onStdUpdate()" >Update Student</button>
+                <button mat-raised-button color="primary" class="btn-block" type="button" (click)="onStdCancel()">Cancel Edit</button>
+            </ng-template>
+
+        </form>
+    </div>
+</div>
