@@ -1,0 +1,30 @@
+
+<div class="card">
+    <div class="card-body">
+        <form action="" #todoForm="ngForm" (ngSubmit)="onTaskSubmit()">
+            <div class="form-group">
+                <label for="task">Todo Item <sup>*</sup></label>
+                <input type="text" class="form-control" ngModel name="task" required>
+            </div>
+            <button mat-raised-button color="accent" [disabled]="todoForm.invalid">Add Todo</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-md-6">
+        <app-todo-form (todoObj)="onTodoAdd($event)"></app-todo-form>
+    </div>
+    <div class="col-md-6">
+        <app-todo-list [todosArr]="todos"></app-todo-list>
+    </div>
+</div>

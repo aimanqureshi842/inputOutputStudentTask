@@ -1,0 +1,24 @@
+<div class="card box-shadow mb-2">
+    <div class="card-header" style="background-color: cadetblue;">
+        <h1 class="text-center font-weight-bold m-0">
+            Todo List
+        </h1>
+
+    </div>
+    <div class="card-body " style="background-color:rgb(95, 158, 160,.6); ">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let task of taskList">
+                <strong>{{task.task|titlecase}}</strong>
+                <div>
+        <button mat-icon-button aria-label="Example icon button with a vertical three doticon" color="primary">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Example icon button with a vertical three doticon" color="warn">
+            <mat-icon>delete</mat-icon>
+        </button>
+                    
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

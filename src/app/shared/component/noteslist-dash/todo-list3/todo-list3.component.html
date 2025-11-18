@@ -1,0 +1,20 @@
+<div class="card" *ngIf="noteListArr.length>0 ;else noTodo">
+    <div class="card-body">
+        <h1 class="text-center font-weight-bold">Todo List</h1>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let list of noteListArr">
+                <strong>{{list.note|titlecase}}</strong>
+                <div>
+                    <button mat-raised-button color="primary" class="mr-3" (click)="onNoteEdit(list)">Edit</button>
+                    <button mat-raised-button color="warn" (click)="onRemoveNote(list)">Remove</button>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<ng-template #noTodo>
+    <p class="alert alert-info">
+        No todo added yet !
+    </p>
+</ng-template>

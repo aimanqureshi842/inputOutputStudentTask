@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body" *ngIf="todosArr.length>0 ;else notodo">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todosArr ;index as i">
+              <strong>{{i+1}} . {{todo.todoItem|titlecase}}</strong>
+              <div>
+                <button mat-stroked-button color="primary" class="mr-2">Edit</button>
+                <button mat-stroked-button color="warn">Remove</button>
+
+              </div>
+            </li>
+        </ul>
+    </div>
+    <ng-template #notodo>
+      <p class="alert alert-info">No todo added !</p>
+    </ng-template>
+</div>

@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body">
+        <form action="" #todoForm="ngForm" (ngSubmit)="onNoteAdd()">
+            <div class="form-group">
+                <label for="todoItem"> Todo Item</label>
+                <input type="text" class="form-control" ngModel name="note" required>
+            </div>
+            <button mat-stroked-button color="primary" class="btn-block" *ngIf="!isInEditMode ;else updateNdCancel">Add
+                Note</button>
+            <ng-template #updateNdCancel>
+                <button mat-stroked-button color="primary" class="btn-block" (click)="onUpdateNote()">Update Note</button>
+                <button mat-stroked-button color="primary" class="btn-block" (click)="onUpdateCancel()">Cancel Update</button>
+            </ng-template>
+
+        </form>
+    </div>
+</div>
