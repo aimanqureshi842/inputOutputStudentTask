@@ -5,11 +5,17 @@
                 <label for="todoItem"> Todo Item</label>
                 <input type="text" class="form-control" ngModel name="note" required>
             </div>
-            <button mat-stroked-button color="primary" class="btn-block" *ngIf="!isInEditMode ;else updateNdCancel">Add
+            <button mat-stroked-button color="primary" class="btn-sm mr-3" *ngIf="!isInEditMode ;else updateNdCancel" type="submit">Add
                 Note</button>
+                 <button mat-stroked-button color="primary" class="btn-sm"
+                *ngIf="!isInEditMode" (click)="onReset()" type="button">Reset
+                </button>
+
             <ng-template #updateNdCancel>
-                <button mat-stroked-button color="primary" class="btn-block" (click)="onUpdateNote()">Update Note</button>
-                <button mat-stroked-button color="primary" class="btn-block" (click)="onUpdateCancel()">Cancel Update</button>
+                <button mat-stroked-button color="primary" class="btn-block" (click)="onUpdateNote()" type="button">Update
+                    Note</button>
+                <button mat-stroked-button color="primary" class="btn-block" (click)="onUpdateCancel()" type="button">Cancel
+                    Update</button>
             </ng-template>
 
         </form>
