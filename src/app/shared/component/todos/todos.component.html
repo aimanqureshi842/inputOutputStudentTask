@@ -23,11 +23,11 @@
         <div class="card">
             <div class="card-body">
                 <ul class="list-group" *ngIf="todos.length>0 ;else noTodo">
-                    <li class="list-group-item d-flex justify-content-between" *ngFor="let list of todos">
+                    <li class="list-group-item d-flex justify-content-between" *ngFor="let list of todos;trackBy:trackById">
                         <strong>{{list.todoItem|titlecase}}</strong>
                         <div>
                             <button mat-raised-button color="primary" class="mr-3" (click)="onEditTodo(list)">Edit</button>
-                            <button mat-raised-button color="warn" (click)="onTodoRemove(list)" [disabled]="list.todoId===Edit_Id">Remove</button>
+                            <button mat-raised-button color="warn" (click)="onTodoRemove(list)" *ngIf="!isInEditMode || list.todoId !== Edit_Id">Remove</button>
 
                         </div>
                     </li>

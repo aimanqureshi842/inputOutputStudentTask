@@ -29,6 +29,11 @@ todos:Array<Itodo>=[
 
   ngOnInit(): void {
   }
+
+  trackById(i:number,todoObj:Itodo){
+return todoObj.todoId
+  }
+
 onTodoSubmit(){
   if(this.todoForm.valid){
   let todoObj={
