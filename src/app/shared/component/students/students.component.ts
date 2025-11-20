@@ -39,6 +39,8 @@ onStdAdd(){
     this.students.unshift(stdObj);
     this.stdForm.reset();
      this._snackBar.openSnackBar('New student added successfully !')
+  }else{
+    alert('pls fill all input first !')
   }
 }
 onStdRemove(stdObj:Istudents){
