@@ -18,6 +18,8 @@ import { NoteslistDashComponent } from './shared/component/noteslist-dash/notesl
 import { TodoList3Component } from './shared/component/noteslist-dash/todo-list3/todo-list3.component';
 import { TodoForm3Component } from './shared/component/noteslist-dash/todo-form3/todo-form3.component';
 import { TestComponent } from './shared/component/test/test.component';
+import { StudentsComponent } from './shared/component/students/students.component';
+import { TodosComponent } from './shared/component/todos/todos.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { TestComponent } from './shared/component/test/test.component';
     NoteslistDashComponent,
     TodoList3Component,
     TodoForm3Component,
-    TestComponent
+    TestComponent,
+    StudentsComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,

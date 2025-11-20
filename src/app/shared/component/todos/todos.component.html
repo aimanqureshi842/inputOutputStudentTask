@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <form action="" #todoForm="ngForm" (ngSubmit)="onTodoSubmit()">
+                    <div class="form-group">
+                        <label for="todoItem"> Todo Item</label>
+                        <input type="text" class="form-control" ngModel name="todoItem" required>
+                    </div>
+                    <button mat-raised-button color="primary" *ngIf="!isInEditMode;else InEdit">Add Todo</button>
+                    <ng-template #InEdit>
+                        <button mat-raised-button color="primary" (click)="onUpdateTodo()" type="button">Update Todo</button>
+                    </ng-template>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group" *ngIf="todos.length>0 ;else noTodo">
+                    <li class="list-group-item d-flex justify-content-between" *ngFor="let list of todos">
+                        <strong>{{list.todoItem|titlecase}}</strong>
+                        <div>
+                            <button mat-raised-button color="primary" class="mr-3" (click)="onEditTodo(list)">Edit</button>
+                            <button mat-raised-button color="warn" (click)="onTodoRemove(list)" [disabled]="list.todoId===Edit_Id">Remove</button>
+
+                        </div>
+                    </li>
+                </ul>
+                <ng-template #noTodo>
+                <p class="alert alert-info font-weight-bold">No todo added yet </p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

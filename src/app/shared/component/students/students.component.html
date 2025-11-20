@@ -1,0 +1,70 @@
+<div class="row mt-3">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <form action="" #stdForm="ngForm" (ngSubmit)="onStdAdd()">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" ngModel name="fname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" ngModel name="lname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"> Email</label>
+                        <input type="text" class="form-control" ngModel name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact</label>
+                        <input type="text" class="form-control" ngModel name="contact" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="text" class="form-control" ngModel name="age" required>
+                    </div>
+                    <button mat-raised-button color="primary" *ngIf="!isInEditMode; else notEdit">Add Student</button>
+                    <ng-template #notEdit>
+                        <button mat-raised-button color="primary" type="button" (click)="onStdUpdate()">Update Student</button>
+                    </ng-template>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive" *ngIf="students.length>0;else noStd">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Sr no</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Age</th>
+                                <th>Edit</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let std of students;index as i">
+                                <td>{{i+1}}</td>
+                                <td>{{std.fname|titlecase}} {{std.lname|titlecase}}</td>
+                                <td>{{std.email}}</td>
+                                <td>{{std.contact}}</td>
+                                <td>{{std.age}}</td>
+                                <td><button mat-raised-button color="primary" (click)="onStdEdit(std)">Edit</button></td>
+                                <td><button mat-raised-button color="warn" (click)="onStdRemove(std)" [disabled]="std.stdId===Edit_Id" >Remove</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ng-template #noStd>
+                    <p class="alert alert-info font-weight-bold">No student added yet !</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
