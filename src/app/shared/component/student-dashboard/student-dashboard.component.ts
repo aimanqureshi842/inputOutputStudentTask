@@ -56,7 +56,7 @@ this.students.push(std);
 this._snackBar.openSnackBar('Student added successfully !')
 }
 onStdEdit(stdEdit:Istudent){
-this.editStudent=stdEdit
+this.editStudent={...stdEdit}
 }
 onUpdateStd(updatedObj:Istudent){
   let getIndex=this.students.findIndex(std=>std.stdId===updatedObj.stdId)

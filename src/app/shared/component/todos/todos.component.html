@@ -1,4 +1,3 @@
-
 <h1 class="alert alert-success font-weight-bold">Todo Task</h1>
 <div class="row">
     <div class="col-md-6">
@@ -11,7 +10,8 @@
                     </div>
                     <button mat-raised-button color="primary" *ngIf="!isInEditMode;else InEdit">Add Todo</button>
                     <ng-template #InEdit>
-                        <button mat-raised-button color="primary" (click)="onUpdateTodo()" type="button">Update Todo</button>
+                        <button mat-raised-button color="primary" (click)="onUpdateTodo()" type="button">Update
+                            Todo</button>
                     </ng-template>
 
                 </form>
@@ -20,22 +20,29 @@
         </div>
     </div>
     <div class="col-md-6">
-        <div class="card">
+        <div class="card" *ngIf="todos.length>0 ;else noTodo">
             <div class="card-body">
-                <ul class="list-group" *ngIf="todos.length>0 ;else noTodo">
-                    <li class="list-group-item d-flex justify-content-between" *ngFor="let list of todos;trackBy:trackById">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between"
+                        *ngFor="let list of todos;trackBy:trackById">
                         <strong>{{list.todoItem|titlecase}}</strong>
                         <div>
-                            <button mat-raised-button color="primary" class="mr-3" (click)="onEditTodo(list)">Edit</button>
-                            <button mat-raised-button color="warn" (click)="onTodoRemove(list)" *ngIf="!isInEditMode || list.todoId !== Edit_Id">Remove</button>
+                            <button mat-raised-button color="primary" class="mr-3"
+                                (click)="onEditTodo(list)">Edit</button>
+                            <button mat-raised-button color="warn" (click)="onTodoRemove(list)"
+                                *ngIf="!isInEditMode || list.todoId !== Edit_Id">Remove</button>
 
                         </div>
                     </li>
                 </ul>
-                <ng-template #noTodo>
-                <p class="alert alert-info font-weight-bold">No todo added yet </p>
-                </ng-template>
+
             </div>
+
+
         </div>
+        <ng-template #noTodo>
+            <p class="alert alert-info font-weight-bold">Add todos to get going !</p>
+        </ng-template>
     </div>
+
 </div>

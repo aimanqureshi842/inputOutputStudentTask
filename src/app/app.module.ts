@@ -20,6 +20,9 @@ import { TodoForm3Component } from './shared/component/noteslist-dash/todo-form3
 import { TestComponent } from './shared/component/test/test.component';
 import { StudentsComponent } from './shared/component/students/students.component';
 import { TodosComponent } from './shared/component/todos/todos.component';
+import { EmployeeDashboardComponent } from './shared/component/employee-dashboard/employee-dashboard.component';
+import { EmployeeFormComponent } from './shared/component/employee-form/employee-form.component';
+import { EmployeeDetailsComponent } from './shared/component/employee-details/employee-details.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { TodosComponent } from './shared/component/todos/todos.component';
     TodoForm3Component,
     TestComponent,
     StudentsComponent,
-    TodosComponent
+    TodosComponent,
+    EmployeeDashboardComponent,
+    EmployeeFormComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,

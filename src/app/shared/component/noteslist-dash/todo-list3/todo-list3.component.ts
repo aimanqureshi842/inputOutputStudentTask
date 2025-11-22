@@ -16,10 +16,10 @@ export class TodoList3Component implements OnInit {
   ngOnInit(): void {
   }
 
-  trackByRefId(index:number,list:INotesInterface){
-    console.log("trackBy called →", list.refId);
-    return list.refId
-  }
+  // trackByRefId(index:number,list:INotesInterface){
+  //   console.log("trackBy called →", list.refId);
+  //   return list.refId
+  // }
 
 onRemoveNote(list:INotesInterface){
 //   let confirmation=confirm('Are you sure You want to remove this Note ? ')

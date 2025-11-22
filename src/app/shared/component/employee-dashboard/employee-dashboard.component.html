@@ -1,0 +1,23 @@
+
+<div class="row mb-3">
+    <div class="col-md-6">
+     <app-employee-form (newEmpl)="onEmpAdd($event)" [editObj]="editedObj" (updatedObj)="onEmpUpdate($event)"></app-employee-form>
+    </div>
+    <div class="col-md-6">
+    <app-employee-details [employeeArr]="employees" (empId)="onEmpRemove($event)" (editObj)="onEmpEdit($event)"></app-employee-details>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

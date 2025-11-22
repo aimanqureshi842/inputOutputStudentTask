@@ -14,14 +14,14 @@ export class TodosComponent implements OnInit {
   isInEditMode: boolean = false;
   Edit_Id!: string
   todos: Array<Itodo> = [
-    {
-      todoItem: "Java",
-      todoId: "123"
-    },
-    {
-      todoItem: "Saas",
-      todoId: "124"
-    }
+    // {
+    //   todoItem: "Java",
+    //   todoId: "123"
+    // },
+    // {
+    //   todoItem: "Saas",
+    //   todoId: "124"
+    // }
   ]
   constructor(private _uuid: UuidService,
     private _snackBar: SnackbarService
@@ -31,7 +31,8 @@ export class TodosComponent implements OnInit {
   }
 
   trackById(i: number, todoObj: Itodo) {
-   console.log(todoObj.todoId)
+   console.log(todoObj.todoId);
+  //  return todoObj.todoId
   }
 
   onTodoSubmit() {

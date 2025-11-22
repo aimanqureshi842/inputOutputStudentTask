@@ -2,7 +2,7 @@
     <div class="card-body">
         <h1 class="text-center font-weight-bold">Todo List</h1>
         <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between" *ngFor="let list of noteListArr ;trackBy:trackByRefId" >
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let list of noteListArr" >
                 <strong>{{list.note|titlecase}}</strong>
                 <div>
                     <button mat-raised-button color="primary" class="mr-3" (click)="onNoteEdit(list)">Edit</button>

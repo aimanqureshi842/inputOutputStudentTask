@@ -1,0 +1,47 @@
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive" *ngIf="employeeArr.length>0 ;else nodata">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr no</th>
+                        <th>Full Name</th>
+                        <th>Age</th>
+                        <th>Department</th>
+                        <th>Edit</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of employeeArr;index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{emp.name|titlecase}}</td>
+                        <td>{{emp.age}}</td>
+                        <td>{{emp.department|titlecase}}</td>
+                        <td><button mat-raised-button color="accent" (click)="onEmpEdit(emp)">Edit</button></td>
+                        <td><button mat-raised-button color="warn" (click)="onEmpRemove(emp.id)">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <ng-template #nodata>
+        <p class="alert alert-danger">
+            Add student to get go !
+        </p>
+        </ng-template>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
